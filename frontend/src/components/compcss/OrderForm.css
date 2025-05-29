@@ -1,0 +1,154 @@
+.order-form-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+/* Style for customer name and phone inputs */
+.order-form input[type="text"],
+.order-form input[type="tel"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.order-form input[type="text"]:focus,
+.order-form input[type="tel"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.selected-item-row {
+  display: flex;
+  align-items: center; /* vertically center all children */
+  gap: 12px;
+  margin-bottom: 10px;
+  min-height: 36px; /* ensure uniform height */
+}
+
+/* Item name text */
+.selected-item-row > span {
+  flex: 1 1 auto;
+  font-weight: 500;
+  display: flex;          /* Flex container */
+  align-items: center;    /* Vertically center text */
+  user-select: none;
+  padding-left: 6px;      /* align horizontally with inputs */
+}
+
+/* Quantity input */
+.selected-item-row input[type="number"] {
+  width: 60px;
+  height: 36px;
+  padding: 0 8px;
+  font-size: 0.9rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Customization input */
+.selected-item-row input[type="text"] {
+  flex: 1 1 200px;
+  height: 36px;
+  padding: 0 10px;
+  font-size: 0.9rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Focus styles */
+.selected-item-row input[type="number"]:focus,
+.selected-item-row input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.order-form-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  width: 600px;
+  max-width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.menu-items-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.menu-item-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.menu-item-card:hover {
+  background: #f0f0f0;
+}
+
+.selected-items {
+  margin-top: 20px;
+}
+
+.selected-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.order-total {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.submit-btn {
+  background: green;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #ccc;
+  color: black;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}

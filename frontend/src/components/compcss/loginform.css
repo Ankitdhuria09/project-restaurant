@@ -1,0 +1,73 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #65b5ff; /* Matches app background */
+}
+
+.login-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  color: #2d2d2d;
+}
+
+.logo {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #ff7a00;
+}
+
+.login-form h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.login-form p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.login-form input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.login-form button {
+  width: 100%;
+  background-color: #a6ff98;
+  color: black;
+  border: none;
+  text-color: black;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #a6gf98;
+}
+
+.login-form .error {
+  color: red;
+}
+
+.demo-accounts {
+  text-align: left;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  color: #555;
+}
