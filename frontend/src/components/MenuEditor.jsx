@@ -32,7 +32,7 @@ function MenuEditor() {
         tags: form.tags.split(",").map(t => t.trim()),
         ingredients: form.ingredients.split(",").map(i => i.trim()),
       };
-      await api.post("/menu", payload);
+      await api.post("https://project-restaurant-backend.onrender.com/api/menu", payload);
       alert("Menu item created!");
       setForm({ name: "", category: "", price: "", ingredients: "", tags: "", availability: true });
     } catch (err) {
