@@ -15,7 +15,7 @@ export default function OrderForm({ onOrderPlaced, onCancel }) {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const res = await axios.get("/api/menu", {
+        const res = await axios.get("https://project-restaurant-backend.onrender.com/api/menu", {
           headers: { Authorization: `Bearer ${user?.token}` },
         });
         setMenuItems(Array.isArray(res.data) ? res.data : []);
@@ -88,7 +88,7 @@ export default function OrderForm({ onOrderPlaced, onCancel }) {
     };
 
     try {
-      const res = await axios.post("/api/orders", orderData, {
+      const res = await axios.post("https://project-restaurant-backend.onrender.com/api/orders", orderData, {
         headers: { Authorization: `Bearer ${user?.token}` },
       });
       toast.success("Order placed!");
