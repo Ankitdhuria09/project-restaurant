@@ -53,7 +53,7 @@ cd project-restaurant
 ```bash
 # For backend
 cd server
-npm install
+node server.js
 
 # For frontend
 cd frontend
