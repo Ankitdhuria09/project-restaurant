@@ -44,9 +44,9 @@ export default function MenuPage() {
       };
 
       if (editItem) {
-        await axios.put(`/api/menu/${editItem._id}`, payload);
+        await axios.put(`https://project-restaurant-backend.onrender.com/api/menu/${editItem._id}`, payload);
       } else {
-        await axios.post("/api/menu", payload);
+        await axios.post("https://project-restaurant-backend.onrender.com/api/menu", payload);
       }
 
       setShowForm(false);
@@ -67,7 +67,7 @@ export default function MenuPage() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/api/menu/${id}`);
+      await axios.delete(`https://project-restaurant-backend.onrender.com/api/menu/${id}`);
       fetchMenu();
     } catch (err) {
       console.error("Failed to delete item:", err);
