@@ -10,6 +10,9 @@ const app = express();
 
 // Middleware
 app.use(cors());
+ app.use(cors({
+  origin: 'https://project-restaurant-fuv3.onrender.com',
+}));
 app.use(express.json());
 
 // Routes
