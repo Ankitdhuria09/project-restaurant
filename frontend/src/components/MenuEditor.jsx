@@ -1,7 +1,7 @@
 import { useState } from "react";
 import api from "../api/axios";
 import { useAuth } from "../context/AuthContext";
-
+import axios from "axios";
 function MenuEditor() {
   const { role } = useAuth();
   const [form, setForm] = useState({
@@ -32,7 +32,7 @@ function MenuEditor() {
         tags: form.tags.split(",").map(t => t.trim()),
         ingredients: form.ingredients.split(",").map(i => i.trim()),
       };
-      await api.post("https://project-restaurant-backend.onrender.com/api/menu", payload);
+      await axios.post("https://project-restaurant-backend.onrender.com/api/menu", payload);
       alert("Menu item created!");
       setForm({ name: "", category: "", price: "", ingredients: "", tags: "", availability: true });
     } catch (err) {
