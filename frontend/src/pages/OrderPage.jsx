@@ -5,7 +5,7 @@ import OrderTracker from '../components/OrderTracker';
 import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-toastify';
 import { PlusCircle, Search, Filter, XCircle } from 'lucide-react';
-import './css/OrderPage.css';
+import './css/orderpage.css';
 
 function OrderPage() {
   const { user } = useAuth();
