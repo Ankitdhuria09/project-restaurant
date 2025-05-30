@@ -29,6 +29,7 @@ router.post('/', async (req, res) => {
       ingredients: ingredients || [],
       tags: tags || [],
       available: available !== undefined ? available : true,
+      role: 'admin' ,
     });
 
     await newItem.save();
