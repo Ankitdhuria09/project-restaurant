@@ -52,19 +52,17 @@ cd project-restaurant
 
 ```bash
 # For backend
-cd backend
+cd server
 npm install
 
 # For frontend
-cd ../frontend
+cd frontend
 npm install
 ```
 
 ### Start development servers
 
 ```bash
-# In one terminal: start MongoDB
-mongod
 
 # In another terminal: start backend
 cd backend
@@ -87,7 +85,7 @@ Manually test:
 ```
 project-restaurant/
 │
-├── backend/
+├── server/
 │   ├── models/
 │   ├── routes/
 │   ├── controllers/
