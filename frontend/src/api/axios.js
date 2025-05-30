@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api", // Match backend port
+  baseURL: "https://project-restaurant-backend.onrender.com/api", // Match backend port
 });
 
 export default api;
