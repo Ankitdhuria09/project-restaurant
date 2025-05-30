@@ -33,37 +33,40 @@ export default function MenuPage() {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const payload = {
-        ...itemData,
-        price: parseFloat(itemData.price),
-        ingredients: itemData.ingredients.split(",").map((i) => i.trim()),
-        tags: itemData.tags.split(",").map((t) => t.trim()),
-      };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const payload = {
+      ...itemData,
+      price: parseFloat(itemData.price),
+      ingredients: itemData.ingredients.split(",").map((i) => i.trim()),
+      tags: itemData.tags.split(",").map((t) => t.trim()),
+    };
 
-      if (editItem) {
-        await axios.put(`https://project-restaurant-backend.onrender.com/api/menu/${editItem._id}`, payload);
-      } else {
-        await axios.post("https://project-restaurant-backend.onrender.com/api/menu", payload);
-      }
-
-      setShowForm(false);
-      setEditItem(null);
-      setItemData({
-        name: "",
-        price: "",
-        category: "",
-        ingredients: "",
-        tags: "",
-        available: true,
+    if (editItem) {
+      await axios.put(`https://project-restaurant-backend.onrender.com/api/menu/${editItem._id}`, payload);
+    } else {
+      await axios.post("https://project-restaurant-backend.onrender.com/api/menu", {
+        ...payload,
+        role: user?.role, // ✅ add this line
       });
-      fetchMenu();
-    } catch (err) {
-      console.error("Failed to save item:", err);
     }
-  };
+
+    setShowForm(false);
+    setEditItem(null);
+    setItemData({
+      name: "",
+      price: "",
+      category: "",
+      ingredients: "",
+      tags: "",
+      available: true,
+    });
+    fetchMenu();
+  } catch (err) {
+    console.error("Failed to save item:", err);
+  }
+};
 
   const handleDelete = async (id) => {
     try {
