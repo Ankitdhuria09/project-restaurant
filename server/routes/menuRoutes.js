@@ -1,5 +1,9 @@
 const express = require('express');
 const router = express.Router();
+
+// ✅ Import MenuItem model
+const MenuItem = require('../models/MenuItem');
+
 const {
   createMenuItem,
   getMenuItems,
@@ -7,10 +11,13 @@ const {
   deleteMenuItem
 } = require('../controllers/menuController');
 
+// GET all menu items
 router.get('/', getMenuItems);
+
+// POST a new menu item
 router.post('/', async (req, res) => {
   try {
-    // Simulate simple role check from frontend (replace with real auth later)
+    // Simple role check (temporary logic until real auth is added)
     const { role } = req.body;
     if (role !== 'admin') {
       return res.status(403).json({ message: 'Only admins can create items' });
@@ -28,8 +35,7 @@ router.post('/', async (req, res) => {
       price,
       ingredients: ingredients || [],
       tags: tags || [],
-      available: available !== undefined ? available : true,
-      role: 'admin' ,
+      available: available !== undefined ? available : true
     });
 
     await newItem.save();
@@ -39,7 +45,11 @@ router.post('/', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
+// PUT update a menu item
 router.put('/:id', updateMenuItem);
+
+// DELETE a menu item
 router.delete('/:id', deleteMenuItem);
 
 module.exports = router;
