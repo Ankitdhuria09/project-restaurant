@@ -45,7 +45,7 @@ function OrderPage() {
     if (!nextStatus) return;
 
     try {
-      const res = await axios.put(`/api/orders/${order._id}`, { status: nextStatus }, {
+      const res = await axios.put(`https://project-restaurant-backend.onrender.com/api/orders/${order._id}`, { status: nextStatus }, {
         headers: {
           Authorization: `Bearer ${user?.token}`,
         },
