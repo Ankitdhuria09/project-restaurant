@@ -20,7 +20,7 @@ function OrderPage() {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get('/api/orders', {
+      const res = await axios.get('https://project-restaurant-backend.onrender.com/api/orders', {
         headers: {
           Authorization: `Bearer ${user?.token}`,
         },
