@@ -17,7 +17,7 @@ export default function AnalyticsPage() {
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
-        const res = await axios.get('/api/orders/analytics');
+        const res = await axios.get('https://project-restaurant-backend.onrender.com/api/orders/analytics');
         setData(res.data);
       } catch (err) {
         setError('Failed to load analytics.');
