@@ -9,7 +9,6 @@ const orderRoutes = require('./routes/orderRoutes');
 const app = express();
 
 // Middleware
-app.use(cors());
  app.use(cors({
   origin: 'https://project-restaurant-fuv3.onrender.com',
 }));
